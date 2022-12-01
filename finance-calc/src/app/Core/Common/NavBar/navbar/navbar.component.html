@@ -1,0 +1,13 @@
+<div id="menu">
+  <div id="menu-items">
+    <a
+    *ngFor="let item of menuItems; index as i;"
+        [href]=item.link
+        class="menu-item"
+        (mouseover)="changeIndex(i)"
+        > {{item.name}}
+    </a>
+  </div>
+  <div id="menu-background-pattern"></div>
+  <div id="menu-background-image"></div>
+</div>

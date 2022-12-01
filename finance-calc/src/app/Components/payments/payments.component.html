@@ -1,0 +1,46 @@
+
+<div class="table-container" *ngIf="payments | async as payment; else loading">
+  <button mat-button (click)="openDialog('Add', emptyPayment)" mat-flat-button color="primary">Add Row</button>
+  <table mat-table [dataSource]="payment.items" class="mat-elevation-z8">
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Category </th>
+      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="payment">
+      <th mat-header-cell *matHeaderCellDef> Payment </th>
+      <td mat-cell *matCellDef="let element"> {{element.payment}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tag">
+      <th mat-header-cell *matHeaderCellDef> Tag </th>
+      <td mat-cell *matCellDef="let element"> {{element.tag}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element" class="actions">
+        <a (click)="openDialog('Update',element)"><mat-icon>edit</mat-icon></a>
+        <a (click)="openDialog('Delete',element)"><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+<ng-template #loading>Loading...</ng-template>

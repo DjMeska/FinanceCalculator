@@ -1,0 +1,23 @@
+.table-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70vw;
+}
+
+table {
+  width: 70vw;
+}
+
+.form-button{
+  background-color: #424242;
+  color: white;
+}
+
+.mat-column-action{
+  width: 1vw;
+}
+
+.actions a {
+  display: flex;
+  flex-direction: column;
+}

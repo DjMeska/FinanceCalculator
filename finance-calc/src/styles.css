@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(20,20,20);
+ }
+
+.cdk-overlay-dark-backdrop {
+  background: rgb(0 0 0 / 50%) !important;
+}
+.mat-dialog-container {
+  box-shadow: none !important;
+}
