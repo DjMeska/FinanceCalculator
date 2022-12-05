@@ -43,4 +43,28 @@ export class PaymentService {
     );
   }
 
+  public getAllPayments(): Observable<any> {
+    let uri = new URL(this.url)
+    uri.searchParams.set('perPage', '2000')
+    return this.http.get<any>(uri.toString());
+  }
+
+  public sortByDate(payments: IPayment[]): IPayment[] {
+    return payments.sort(function(a,b){
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    });
+  }
+
+  public groupByMonth(payments: IPayment[]): IPayment[] {
+    const sortedObj = [] as any;
+    payments.forEach(e => {
+      const date = new Date(e.date).toISOString()
+      const k = date.slice(0, 7);
+      const fk = `${k}-01`;
+      sortedObj[fk] = sortedObj[fk] || [];
+      sortedObj[fk].push(e);
+    });
+    return sortedObj as IPayment[];
+  }
+
 }

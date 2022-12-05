@@ -16,8 +16,8 @@ export class NavbarComponent {
       name: "Payments",
     },
     {
-      link: "/",
-      name: "ETC",
+      link: "/charts",
+      name: "Charts",
     },
     {
       link: "/",

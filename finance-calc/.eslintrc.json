@@ -12,7 +12,8 @@
         "project": [
           "tsconfig.json"
         ],
-        "createDefaultProgram": true
+        "createDefaultProgram": true,
+        "tsconfigRoot": "tsconfig.json"
       },
       "extends": [
         "plugin:@angular-eslint/recommended",

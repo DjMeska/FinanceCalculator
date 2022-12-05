@@ -11,9 +11,11 @@ import { NavbarComponent } from './Core/Common/NavBar/navbar/navbar.component';
 import { MaterialModule } from '../material/material.module';
 import { DialogBoxComponent } from './Core/Common/DialogBox/dialog-box/dialog-box.component'
 import { FormsModule } from '@angular/forms';
+import { LineChartComponent } from './Components/line-chart/line-chart.component';
 
 const appRoutes: Routes = [
   {path: 'payments', component: PaymentsComponent},
+  {path: 'charts', component: LineChartComponent},
 ]
 
 @NgModule({
@@ -22,6 +24,7 @@ const appRoutes: Routes = [
     PaymentsComponent,
     NavbarComponent,
     DialogBoxComponent,
+    LineChartComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+
+<div class="chart-container">
+  <button mat-button (click)="chartsByMonth()" mat-flat-button color="primary">chartsByMonth</button>
+  <div>
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+  </div>
+  <div  *ngFor="let item of monthChart; index as i;">
+    <canvas [id]="i">{{ item }}</canvas>
+  </div>
+</div>
+
